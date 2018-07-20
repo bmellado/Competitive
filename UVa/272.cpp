@@ -1,18 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main(){
-    ios_base::sync_with_stdio(false);
-    char c;
-    char dQuote = 0;
-    while(scanf("%c", &c), c != EOF){
-        if(c == '\"' && dQuote%2 == 0){
-            printf("\`\`");
-            dQuote++;
+    char c[1000000];
+    bool open = false;
+    while(gets(c)){
+        int len = strlen(c);
+        for(int i = 0; i < len; i++){
+            if(c[i]=='\"'){
+                if(open) {
+                    printf("''");
+                    open = !open;
+                }
+                else {
+                    printf("``");
+                    open = !open;
+                }
+            }
+            else printf("%c", c[i]);
         }
-        else if (c == '\"' && dQuote%2 == 1){
-            printf("\'\'");
-            dQuote++;
-        }
-        else printf("%c", c);
+        printf("\n");
     }
+
 return 0;}
