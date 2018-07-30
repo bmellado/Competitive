@@ -27,10 +27,10 @@ int main(){
             else
                 A[0][(int)month] = depr;
         }
-        for(int j = 1; j <= m; j++){
+        for(int j = 0; j <= m; j++){
             if((int)A[0][j] == -1)
                 A[0][j] = A[0][j-1];
-            A[1][j] = A[1][j-1] *(1 - A[0][j]);
+            if(j!=0) A[1][j] = A[1][j-1] *(1 - A[0][j]);
             if(A[2][j] < A[1][j]){
                 ans = j;
                 break;
