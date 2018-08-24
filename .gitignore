@@ -2,3 +2,9 @@
 *.o
 *.exe
 *.c
+
+*.out
+
+UVa/input
+
+UVa/output
